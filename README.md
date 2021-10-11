@@ -9,6 +9,11 @@
   uses an optimized configuration stack and provides additional, dedicated capacity for amazon EBS I/O. this optimization provides a best performance for EBS by 
   minimizing contention between EBS I/O and other traffic.
 - ### EBS encrytion: 
-- 
-
+  when creating an encrypted EBS volume, the following types of date will be encrypted
+  - data at rest
+  - all the data moving between the volume and the instance 
+  - all snapshots created from the volume
+  - all volumes created from these snapshots 
+- ### changing the data's encrytion state: (encrypt/unencrypted unencrypted/encrypt volume)
+  - 
 ## Instance store: 
