@@ -23,6 +23,11 @@
   - all the data moving between the volume and the instance 
   - all snapshots created from the volume
   - all volumes created from these snapshots 
-- ### changing the data's encrytion state: (encrypt/unencrypted unencrypted/encrypt volume)
-  - 
+- ### changing the data's encrytion state: (encrypt unencrypted volume)
+  - we can't remove encryption from an encrypted volume 
+  - we can't directly encrypt an uncrypted volume, instead we can create an instance with an encrypted root device volume from an encrpted snapshot
 ## Instance store: 
+- we can specify an instance store for an EC2 instance only when launching it
+- data in the instance store persists only when we reboot the EC2 instance, they will be lost if:
+    - the instance is stoped or terminated
+    - the hard disk driver fails
