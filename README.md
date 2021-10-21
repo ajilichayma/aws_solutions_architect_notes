@@ -1,4 +1,17 @@
 # aws_solutions_architect_notes
+## Databases:
+- RDS: relational databases services is for online transaction processing (SQL, MySQL, PostgreSQL, Aurora, MariaDB, Oracle)
+- RDS features key: 
+    - multi AZ: for disaster recovery when we lose the database in the first AZ ( the primary database ), amazon will update the DNS with the new IP address of the database in the second AZ. 
+    - read replicas:for performance that means the database is automatically updated ( after modifying the primary database ) and also it is used when we have so many users accessing the database we devise them into parts ; some access the primary, the other part access the secondary and so on.
+- RDS runs on virtual machines
+- you can’t access these O.S
+- RDS is not serverless but aurora is serverless 
+- Elasticache used to speed up the performance of existing databases
+### Buckups types
+- Automated backups: allow you to recover your database to any point in time within a retention period and the retention period can be between one and 35 days.
+- Database snapshots
+
 ## EBS:
 - instance storage attached, the data will be lost if the instance is terminated.
 - we can dettach an EBS from one instance and attach it to another.
