@@ -27,7 +27,7 @@
   - we can't remove encryption from an encrypted volume 
   - we can't directly encrypt an uncrypted volume, instead we can create an instance with an encrypted root device volume from an encrpted snapshot
   
-## Instance store: 
+## Instance store
 - we can specify an instance store for an EC2 instance only when launching it
 - data in the instance store persists only when we reboot the EC2 instance, they will be lost if:
     - the instance is stoped or terminated
@@ -61,7 +61,7 @@
     - The CNAME can't be used for naked domain names (naked domain= base= bare= root apex), howver the alias record can.
     - given the choice, choose an alias record over a CNAME
     - The A record must resolve to an IP. The CNAME and ALIAS records must point to a name.
-- ### aws routing policies: 
+- ### aws routing policies
     1. simple routing
     2. weighted routig
     3. latency-based routing 
@@ -69,9 +69,9 @@
     5. geolocation routing 
     6. geoproximity routing 
     7. multivalue routing 
-### 1. simple routing: 
+### 1. simple routing
 - you can have only one record with multiple IP addr. If you specifyu multiple values in a record, route 53 returns all values to the user in a random order.
-### 2. weighted routig: 
+### 2. weighted routig
 - allows you to split your traffic based on different weights assigned (different regions) 
 - ex: you can set 10% of your traffic to go to us-east-1 and 20% to go to eu-west-1
 ### 3. latency-based routing 
@@ -91,7 +91,7 @@
 - you can specify multiple values for almost any record, but multivalue answer routing also lets you check the health of each ressource.
 - it is similar to simple routing but it allows oyu to put health checks on each record set.
 
-## VPC (virtual private cloud):
+## VPC (virtual private cloud)
 - we can have 5 VPCs per region
 ### Bastion host
 is a server whose purpose is to provide access to a private network from an external network such as Internet
@@ -123,11 +123,11 @@ but one subnet can be associated with one NACL at one time.
 - The default NACL of the VPC allows all outbound and inbound traffic.
 - When creating a custom network ACL. By default, all inbound and outbound traffic are denied.
 
-### Direct connect gateway: 
+### Direct connect gateway
 - It is a gloabally available ressource to enable connections between amazon VPCs across different regions or AWS.
-### VPC endpoints:
+### VPC endpoints
 - It enables connections between VPC and supported services without requiring that you use an internet an internet gateway, NAT device, VPN connection or aws direct connect connection.
-### VPN:
+### VPN
 - It uses IPsec to establish encrypted connectivity between your intranet and amazon VPC and the public internet.
-### AWS transit gateway:
+### AWS transit gateway
 - It uses to interconnect the VPC and on-premises networks.
