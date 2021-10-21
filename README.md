@@ -51,8 +51,9 @@
     - CNAME record: a canonical name, can be used to resolve one domain name to another.
     - Alias record: can be used to resolve one domain name to another
     - The CNAME can't be used for naked domain names (naked domain= base= bare= root apex), howver the alias record can.
+    - given the choice, choose an alias record over a CNAME
     - The A record must resolve to an IP. The CNAME and ALIAS records must point to a name.
--### aws routing policies: 
+- ### aws routing policies: 
     1. simple routing
     2. weighted routig
     3. latency-based routing 
@@ -60,3 +61,16 @@
     5. geolocation routing 
     6. geoproximity routing 
     7. multivalue routing 
+### 1. simple routing: 
+- you can have only one record with multiple IP addr. If you specifyu multiple values in a record, route 53 returns all values to the user in a random order.
+### 2. weighted routig: 
+- allows you to split your traffic based on different weights assigned (different regions) 
+- ex: you can set 10% of your traffic to go to us-east-1 and 20% to go to eu-west-1
+### 3. latency-based routing 
+ - allows you to route your traffic based on the lowest network latency for your end user (ie which region will give you the fasteest response time)
+### 4. failover routing 
+ - are used when you want to create an active/passive set up.
+ - ex: you may want your primary site to be in eu-west-2 and your secondary DR site to be in AP-southeast-2.
+ - route 53 will monitor the health of your primary site using a health check ( the health check monitors the health of your endpoints)
+### 5. geolocation routing 
+- lets you choose where your traffic will be sent based on the geographic location of your users(ie the location from which DNS queries originate)
