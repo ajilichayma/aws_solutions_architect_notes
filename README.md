@@ -46,13 +46,13 @@
     - the default nb of seconds for time to live (TTL) file on ressource records.
 - TTL: the length that a DNS record is cached on either the resolving server or the users own local pc. it is eqaul to the value of 'time to live' in seconds.
        the lower the TTL, the faster changes to DNS records take to propagate throughout the internet.
-- Records types:
+- ### Record types:
     - A record: stands for address record, it maps a name to one or more IP addresses.
     - CNAME record: a canonical name, can be used to resolve one domain name to another.
     - Alias record: can be used to resolve one domain name to another
     - The CNAME can't be used for naked domain names (naked domain= base= bare= root apex), howver the alias record can.
     - The A record must resolve to an IP. The CNAME and ALIAS records must point to a name.
-- aws routing policies: 
+-### aws routing policies: 
     1. simple routing
     2. weighted routig
     3. latency-based routing 
