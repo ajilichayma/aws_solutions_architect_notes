@@ -124,10 +124,10 @@ but one subnet can be associated with one NACL at one time.
 - When creating a custom network ACL. By default, all inbound and outbound traffic are denied.
 
 ### Direct connect gateway: 
-- is a gloabally available ressource to enable connections between amazon VPCs across different regions or AWS.
+- It is a gloabally available ressource to enable connections between amazon VPCs across different regions or AWS.
 ### VPC endpoints:
-- enables connections between VPC and supported services without requiring that you use an internet an internet gateway, NAT device, VPN connection or aws direct connect connection.
+- It enables connections between VPC and supported services without requiring that you use an internet an internet gateway, NAT device, VPN connection or aws direct connect connection.
 ### VPN:
-- uses IPsec to establish encrypted connectivity between your intranet and amazon VPC and the public internet.
+- It uses IPsec to establish encrypted connectivity between your intranet and amazon VPC and the public internet.
 ### AWS transit gateway:
-- uses to interconnect the VPC and on-premises networks.
+- It uses to interconnect the VPC and on-premises networks.
