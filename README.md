@@ -10,8 +10,9 @@
 - Elasticache used to speed up the performance of existing databases
 ### Buckups types
 - Automated backups: allow you to recover your database to any point in time within a retention period and the retention period can be between one and 35 days.
-- Database snapshots
-
+- Database snapshots:
+    - are done manually.
+    -  
 ## EBS:
 - instance storage attached, the data will be lost if the instance is terminated.
 - we can dettach an EBS from one instance and attach it to another.
