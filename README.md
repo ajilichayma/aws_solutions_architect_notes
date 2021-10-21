@@ -89,4 +89,30 @@
 ### 7. multivalue routing 
 - lets you configure amazon route53 to return multiple values such as ip adrs for your web server, in response to a dns query.
 - you can specify multiple values for almost any record, but multivalue answer routing also lets you check the health of each ressource.
-- it is similar ti=o simple routing but it allows oyu to put health checks on each record set.
+- it is similar to simple routing but it allows oyu to put health checks on each record set.
+
+## VPC (virtual private cloud):
+- we can have 5 VPCs per region
+### Bastion host
+is a server whose purpose is to provide access to a private network from an external network such as Internet
+### Nat gateway 
+- when we have NAT gateway attached to the subnet where web server ec2 resides, the traffic from the internet cannot reach the ec2.
+- nat gatewa only routes traffic from aws ressources within a vpc to the internet.
+- any traffic from the internet into vpc ressouces is not allowed.
+- NAT Gateways don't have security groups
+- we can't share NAT gateways across VPCs
+- Provides better availability, higher bandwidth, and requires less administrative effort than NAT instances
+### Security group  
+- are stateful 
+- can be understood as a firewal to protect EC2 instances
+- 
+### Network ACL  
+- are stateless: any change applied to the incoming rule isn't automatically applied to the outgoing rule.
+- can be understood as a firewall for the whole subnet 
+- rules are organised with chronological order; the rule n° 100 will trump the rule n°400
+=> if we have a deny rule, it must be before the allow rule
+- NACL will be evaluated before the security group
+- when creating  VPC, it will be associated with NACL and if we we create subnets, they will be associated by default to the default NACL of the VPC.
+but one subnet can be associated with one NACL at one time.
+- The default NACL of the VPC allows all outbound and inbound traffic.
+- When creating a custom network ACL. By default, all inbound and outbound traffic are denied.
