@@ -95,6 +95,7 @@
 - we can have 5 VPCs per region
 ### Bastion host
 is a server whose purpose is to provide access to a private network from an external network such as Internet
+
 ### Nat gateway 
 - when we have NAT gateway attached to the subnet where web server ec2 resides, the traffic from the internet cannot reach the ec2.
 - nat gatewa only routes traffic from aws ressources within a vpc to the internet.
@@ -102,17 +103,31 @@ is a server whose purpose is to provide access to a private network from an exte
 - NAT Gateways don't have security groups
 - we can't share NAT gateways across VPCs
 - Provides better availability, higher bandwidth, and requires less administrative effort than NAT instances
+
 ### Security group  
 - are stateful 
 - can be understood as a firewal to protect EC2 instances
-- 
+- in the default security group, all inboud and outbound traffic are allowed by default.
+- we can create a custom security group, and by default it allows no inbound traffic and allows all outbound traffic.
+- You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.
+- You can specify allow rules, but not deny rules.
+
 ### Network ACL  
 - are stateless: any change applied to the incoming rule isn't automatically applied to the outgoing rule.
-- can be understood as a firewall for the whole subnet 
+- can be understood as a firewall for the whole subnet.
 - rules are organised with chronological order; the rule n° 100 will trump the rule n°400
 => if we have a deny rule, it must be before the allow rule
-- NACL will be evaluated before the security group
+- NACL will be evaluated before the security group.
 - when creating  VPC, it will be associated with NACL and if we we create subnets, they will be associated by default to the default NACL of the VPC.
 but one subnet can be associated with one NACL at one time.
 - The default NACL of the VPC allows all outbound and inbound traffic.
 - When creating a custom network ACL. By default, all inbound and outbound traffic are denied.
+
+### Direct connect gateway: 
+is a gloabally available ressource to enable connections between amazon VPCs across different regions or AWS.
+### VPC endpoints:
+enables connections between VPC and supported services without requiring that you use an internet an internet gateway, NAT device, VPN connection or aws direct connect connection.
+### VPN:
+uses IPsec to establish encrypted connectivity between your intranet and amazon VPC and the public internet.
+### AWS transit gateway:
+uses to interconnect the VPC and on-premises networks.
