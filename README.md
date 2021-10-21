@@ -74,3 +74,11 @@
  - route 53 will monitor the health of your primary site using a health check ( the health check monitors the health of your endpoints)
 ### 5. geolocation routing 
 - lets you choose where your traffic will be sent based on the geographic location of your users(ie the location from which DNS queries originate)
+### 6. geoproximity routing 
+- lets amazon route 53 route traffic to your ressources based on the geographic location of your users and your ressources.
+- you cn optionally choose to route more or less traffic to a given ressource by specifying z value known as bias.
+- to use geoproximity routing, you must use route53 traffic flow.
+### 7. multivalue routing 
+- lets you configure amazon route53 to return multiple values such as ip adrs for your web server, in response to a dns query.
+- you can specify multiple values for almost any record, but multivalue answer routing also lets you check the health of each ressource.
+- it is similar ti=o simple routing but it allows oyu to put health checks on each record set.
