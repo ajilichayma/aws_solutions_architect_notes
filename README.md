@@ -47,9 +47,17 @@
 - TTL: the length that a DNS record is cached on either the resolving server or the users own local pc. it is eqaul to the value of 'time to live' in seconds.
        the lower the TTL, the faster changes to DNS records take to propagate throughout the internet.
 - ### Record types:
-    - A record: stands for address record, it maps a name to one or more IP addresses.
-    - CNAME record: a canonical name, can be used to resolve one domain name to another.
-    - Alias record: can be used to resolve one domain name to another
+    - A record: 
+    stands for address record, it maps a name to one or more IP addresses.
+    - CNAME record: 
+    a canonical name, can be used to resolve one domain name to another.
+    - Alias record: 
+    can be used to resolve one domain name to another
+    - AAAA record:
+    is similar to an A record but it is for IPv6 addresses (whereas A record is for IPv4).
+    -  MX records (Mail Exchange records):
+    is used for setting up Email servers. MX records must be mapped correctly to deliver email to your address.
+
     - The CNAME can't be used for naked domain names (naked domain= base= bare= root apex), howver the alias record can.
     - given the choice, choose an alias record over a CNAME
     - The A record must resolve to an IP. The CNAME and ALIAS records must point to a name.
