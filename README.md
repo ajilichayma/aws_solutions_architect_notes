@@ -173,3 +173,19 @@ but one subnet can be associated with one NACL at one time.
 - SQS short polling returns immediately ( even if the message queue is empty) 
 - SQS long polling can reduce costs.
 - SQS long polling can be enabled at the queue level or at the API level using WaitTimeSeconds. 
+### SQS remarks
+- any question about decoupling the infrastructure, think about SQS
+
+## SNS (Simple Notification Service)
+- it is a web service that makes it easy to set up, operate, and send notifications from the cloud.
+- it is a publish/subscriber syst
+- it provides developers with a highly scalable, flexible, and cost-effective capacity to publish messages from an app and immediately deliver them to subscribers or other apps.
+- it allows you to group multiple recipients using topics.
+- to prevent messages from being lost, all messages published to Amazon SNS are stored redundantly across multiple AZ.
+- each meassage attribute consists of: a name, a type and a value.
+### SNS Benefits 
+- push based delivery 
+- simple & easy to integrate 
+- pay as you go model with no up front costs.
+## SWF (Simple Workflow Service)
+- it has a way of combining the digital environment with manual tasks ( with human being ) .remember the example of the book order
