@@ -203,7 +203,11 @@ but one subnet can be associated with one NACL at one time.
     - Ability to reprocess/replay data: once you consume the data, the data is not gone from kinesis, it will be gone from the data retention period but you can reuse it               over and over
      - multiple applications can consume the same stream => that means it provides real time processing with scale of throughput
      - once you isert data into kinesis, it can't be deleted ( it is immutable )
-     - one stream is made of many different shards, and you gonna be paid per shard provisioned
-        - shard 
+     - the data capacity of a stream is a function of the nb of shards that you have specified for the stream.
+     - the total capacity of the stream is the sum of the capacities of its shards.
+        - shard limits: 
+        - for a producer: 1MB/s or 1000 msgs/s at write per shard, if you go over that limit you'll get ProvisionedThroughputException
+        - for a consumer (classic): 2MB/s at read per shard across all consumers & 5 API calls per second per shard across all consumers 
+       
  - Kinesis Firehose 
  - Kinesis Analytics: perform real time analytics on streams using SQL 
