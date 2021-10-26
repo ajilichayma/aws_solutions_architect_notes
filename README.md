@@ -169,3 +169,7 @@ but one subnet can be associated with one NACL at one time.
 - after the delay period has been expired, the msg becomes visible & can be executed.
 - immediately after a msg is received, it remains in the queue. to prevent other consumers from processing the msg again, Amazon SQS sets a visibility timeout to prevent other consumers from receiving & processing the msg.
 ### SQS long polling vs SQS short polling 
+- SQS long polling is a way to retrieve messagages from SQS queues- waits for the messages to arrive.
+- SQS short polling returns immediately ( even if the message queue is empty) 
+- SQS long polling can reduce costs.
+- SQS long polling can be enabled at the queue level or at the API level using WaitTimeSeconds. 
