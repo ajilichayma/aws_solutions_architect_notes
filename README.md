@@ -160,3 +160,12 @@ but one subnet can be associated with one NACL at one time.
         - High throughput: it supports up to 300 msgs per sec(send, receiveor delete operations per second)
         - First In First Out delivery: this order is strictly preserved.
         - Exactly-one processing: a msg is delivered once and remains available until a consumer process and deletes it. Duplicates are not intoduced in the queue.
+### Dead letter Queue
+- the main task of a dead letter is handling message failure.
+- it lets you set aside and isolate a msg that can't be processed correctly to determine why their processing didn't succeed.
+### Delay Queue
+- it is the period of time during it the msg remains invisible and can't be executed.
+- it can be from 0 up to 12hours, the default timeout is set to 30 seconds.
+- after the delay period has been expired, the msg becomes visible & can be executed.
+- immediately after a msg is received, it remains in the queue. to prevent other consumers from processing the msg again, Amazon SQS sets a visibility timeout to prevent other consumers from receiving & processing the msg.
+### SQS long polling vs SQS short polling 
