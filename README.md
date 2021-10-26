@@ -145,3 +145,12 @@ but one subnet can be associated with one NACL at one time.
 - It uses IPsec to establish encrypted connectivity between your intranet and amazon VPC and the public internet.
 ### AWS transit gateway
 - It uses to interconnect the VPC and on-premises networks.
+
+## SQS (Simple Queue Service)
+- it a web service that guves you access to message queue which is used to store messages while waiting for a computer to process them.
+- using SQS, you can decouple the components of an app, so they run independtly.
+- messages can contain up to 256KB of text in any format. any component can later retreive the messages programmatically using the amazon SQS API.
+- a queue is a temporary repository for meassages that are waiting processing
+ ### Queue types
+    - Standard queues (default)
+    - FIFO queues 
