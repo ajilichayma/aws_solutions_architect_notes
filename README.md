@@ -204,5 +204,6 @@ but one subnet can be associated with one NACL at one time.
      - multiple applications can consume the same stream => that means it provides real time processing with scale of throughput
      - once you isert data into kinesis, it can't be deleted ( it is immutable )
      - one stream is made of many different shards, and you gonna be paid per shard provisioned
+        - shard 
  - Kinesis Firehose 
  - Kinesis Analytics: perform real time analytics on streams using SQL 
