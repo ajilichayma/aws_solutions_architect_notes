@@ -197,7 +197,8 @@ but one subnet can be associated with one NACL at one time.
 - Great for streaming processing frameworks.
 - Data is automatically replicated synchronously to 3 AZ.
 ### Kinesis types
-    - Kinesis Streams: low latency streaming ingest 
+    -## Kinesis Streams:
+    low latency streaming ingest 
         - Streams are devided into ordered shards(partitions)
         - Data retention is 24h by default, can go up to 7 days 
         - Ability to reprocess/replay data: once you consume the data, the data is not gone from kinesis, it will be gone from the data retention period but you can reuse it               over and over
