@@ -174,7 +174,7 @@ but one subnet can be associated with one NACL at one time.
 - SQS long polling can reduce costs.
 - SQS long polling can be enabled at the queue level or at the API level using WaitTimeSeconds. 
 ### SQS remarks
-- Any question about decoupling the infrastructure, think about SQS
+- For any question about decoupling the infrastructure, think about SQS
 
 ## SNS (Simple Notification Service)
 - It is a web service that makes it easy to set up, operate, and send notifications from the cloud.
