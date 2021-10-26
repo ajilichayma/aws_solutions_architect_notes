@@ -151,6 +151,12 @@ but one subnet can be associated with one NACL at one time.
 - using SQS, you can decouple the components of an app, so they run independtly.
 - messages can contain up to 256KB of text in any format. any component can later retreive the messages programmatically using the amazon SQS API.
 - a queue is a temporary repository for meassages that are waiting processing
- ### Queue types
+### Queue types
     - Standard queues (default)
+        - unlimited throughput: it supports a nearly unlimited nb of transactions per sec.
+        - Best-effort ordering: occasionally, msgs might be delevired in an order different from which they were sent.
+        - At least one delivery: a msg is delivered at least one, but occasionally more than one copy of a msg is delivered.
     - FIFO queues 
+        - High throughput: it supports up to 300 msgs per sec(send, receiveor delete operations per second)
+        - First In First Out delivery: this order is strictly preserved.
+        - Exactly-one processing: a msg is delivered once and remains available until a consumer process and deletes it. Duplicates are not intoduced in the queue.
