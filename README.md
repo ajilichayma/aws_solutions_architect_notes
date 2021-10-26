@@ -189,3 +189,20 @@ but one subnet can be associated with one NACL at one time.
 - pay as you go model with no up front costs.
 ## SWF (Simple Workflow Service)
 - it has a way of combining the digital environment with manual tasks ( with human being ) .remember the example of the book order
+## API gateway 
+## Kinesis 
+- It is a managed alternative to Apache Kafka 
+- great for application logs, metrics, IoT, clickstreams
+- Great for real-time big data
+- Great for streaming processing frameworks.
+- Data is automatically replicated synchronously to 3 AZ.
+### Kinesis types
+    - Kinesis Streams: low latency streaming ingest 
+        - Streams are devided into ordered shards(partitions)
+        - Data retention is 24h by default, can go up to 7 days 
+        - Ability to reprocess/replay data: once you consume the data, the data is not gone from kinesis, it will be gone from the data retention period but you can reuse it               over and over
+        - multiple applications can consume the same stream => that means it provides real time processing with scale of throughput
+        - once you isert data into kinesis, it can't be deleted ( it is immutable )
+        - one stream is made of many different shards, and you gonna be paid per shard provisioned
+    - Kinesis Firehose 
+    - Kinesis Analytics: perform real time analytics on streams using SQL 
