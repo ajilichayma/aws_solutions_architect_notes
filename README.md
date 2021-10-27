@@ -218,4 +218,16 @@ but one subnet can be associated with one NACL at one time.
     - the data are not persistent, there is no retention period
  - Kinesis Analytics:
     - perform real time analytics on streams using SQL 
-## ECS
+## Container Orchestration tools
+- it is a tool for managing, scaling and deploying containers. e.g kubernetes, docker swarm, ECS, etc
+### ECS 
+- It is a container orchestration service
+- It manages the whole container lifeCycle (start, re-schedule, load balance)
+- How does ECS work ?
+    - Run containerized application cluster on AWS: 
+        - ECS cluster is just like the control plane which contains all the EC2 instances that are running containers & it can manage each container lifeCycle.
+        - The EC2 instances are hosting the containers 
+        - On the EC2 instances, we will have the container runtime so that containers can run.
+    - We will have also an ECS agent, for the controll plane to communicate with each individual EC2 instance and to manage them.
+    - you have to manage the EC2 instances ( EC2 fleet ) & join them to the ECS cluster.
+    - When launching a new container, make sure you have enough ressources for it.
