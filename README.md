@@ -223,7 +223,7 @@ but one subnet can be associated with one NACL at one time.
 ### ECS 
 - It is a container orchestration service
 - It manages the whole container lifeCycle (start, re-schedule, load balance)
-- How does ECS work ?
+#### How does ECS work ?
     - Run containerized application cluster on AWS: 
         - ECS cluster is just like the control plane which contains all the EC2 instances that are running containers & it can manage each container lifeCycle.
         - The EC2 instances are hosting the containers.
@@ -232,11 +232,11 @@ but one subnet can be associated with one NACL at one time.
     - you have to manage the EC2 instances ( EC2 fleet ) & join them to the ECS cluster.
     - When launching a new container, make sure you have enough ressources for it.
     - you have to manage the O.S, the Runtime and the ECS agent on the EC2 instances
-- we can use AWS Fargate, when we want to delegate infrastructure to AWS.
-- Fargate:
-    - It is an alternative to EC2 instance
-    - It is a serverless way to launch containers
-    - Pay only for what you use
+#### AWS Fargates:
+- we can use AWS Fargate, when we want to delegate infrastructure management to AWS.
+- It is an alternative to EC2 instance
+- It is a serverless way to launch containers
+- Pay only for what you use
 - Fargate vs EC2 pricing:
     - for forgate, you pay for how long the container is running & for how much capacity was used to run it
     - for EC2, you pay for the whole server
