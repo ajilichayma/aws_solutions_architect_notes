@@ -229,7 +229,7 @@ but one subnet can be associated with one NACL at one time.
         - The EC2 instances are hosting the containers.
         - On the EC2 instances, we will have the container runtime so that containers can run.
     - We will have also an ECS agent, for the controll plane to communicate with each individual EC2 instance and to manage them.
-    - you have to manage the EC2 instances ( EC2 fleet ) & join them to the ECS cluster.
+    - you have to manage the EC2 instances ( compute fleet ) & join them to the ECS cluster.
     - When launching a new container, make sure you have enough ressources for it.
     - you have to manage the O.S, the Runtime and the ECS agent on the EC2 instances
 #### AWS Fargates:
@@ -242,3 +242,40 @@ but one subnet can be associated with one NACL at one time.
     - for EC2, you pay for the whole server
 - Remark: if you need to access to the infrastructure, EC2 will be a better choice.
 #### ECS components 
+- cluster: logical collection of ECS ressources-either EC2 instances or fargate instances.
+- Task definition: JSON template that describes containers which forms your application.can contain multiple containers up to a maximum of 10.
+- Container Definition: inside a task definition, it defines the individaul containers a task uses. it controlls CPU, memory allocation & port mappings.
+- Task: single running copy of any containers defined by a task definition. one working copy of an app e.gh DB & web applications.
+- Service: allows task definitions to be scaled by adding tasks. It defines minimum & maximum values.
+- Registry: storage for container images (e.g ECR or docker hub). used to donload images to create containers.
+### EkS
+- It is an elastic kubernetes service. for managing kubernetes cluster on AWS infrastructure.
+- It is an alternative to ECS.
+#### ECS vs EKS 
+- EKS:
+    - you already use K8s
+    - Easier to migrate to another plateform (GCM, azure, etc), however the migration can be difficult when using a lot of other aws services. it may that services are not on other plateform
+    - it has a large commmunity (a lot of documentation due to the fact that k8s is an open source)
+- ECS:
+     - specific to AWS.
+     - migration is difficult 
+     - less complex applications
+     - ECS control plane is free
+#### How does EKS work ?
+1. create a cluster(represents the control plane): it is the master node
+    - the master node is replicated on 3 AZ.
+2. create worker nodes
+    - create EC2 instances & connect them to the EKS cluster
+- the EKS cluster will communicate with the worker nodes via k8s worker processes
+- remark: when creating the woreker nodes:
+    - EKS with EC2 instances : self-managed
+        - you need to manage the infrastructure for the worker nodes
+    - EKS with Node group: semi-managed
+        - you can group your worker nodes in a node group & the node group can handle some of the heavy lifting for you.
+    - EKS with Fargate: full-managed
+## ECR (Elastic Container Registry)
+- it is a repository for docker images
+- A private docker repository 
+- Stores, manages & deploys docker container images 
+- advantages of using ECR:
+    - integrates with other AWS services, it notifies when a new version of an image gets pushed into the registrey and then dowloads it into your cluster.
