@@ -279,3 +279,35 @@ but one subnet can be associated with one NACL at one time.
 - Stores, manages & deploys docker container images 
 - advantages of using ECR:
     - integrates with other AWS services, it notifies when a new version of an image gets pushed into the registrey and then dowloads it into your cluster.
+   
+## Load balancer 
+- It is a physical or virtual device that's designed to help you to balance the network load.
+- we have 3 types of load balancing:
+    1. Classic load balancer (v1-old generation)
+    2. Application load balancer (v2-new generation)
+    3. Network load balancer (v2-new generation) 
+- It is recommended to use the newer generation as they provide more features.
+### Health checks 
+  - Are crucial for load balancers to know if the instances they are forwarding traffic to are availables to reply to requests or not.
+### ALB (Application Load balancer)
+- Called layer 7
+- Load balance to multiple HTTP apps across machines
+- Load balance to multiple apps on the same machine
+- Load balance based on route in URL or hostname in URL.
+- Basically, are awsome for microservices & container-based app (e.g docker & amazon ECS)
+- In comparison, we would need to create one classic load balancer per application before, it was very expensive & inefficient.
+- support HTTP/HTTPS and sockets protocols
+- The application servers don't see the IP of the client directly 
+    - The true IP of the client is inserted in the header X-Forwarded-For
+    - we can also get port (X-Forwarded-Port) & proto (X-Forwarded-Proto)
+### NLB (Network Load balancer)
+- Forward TCP traffic to the instances.
+- Handle millions of requests per second.
+- Support both static & elastic IP.
+- Less latency 100ms (vs 400ms for ALB).
+- Are mostly used for extreme performance & should not be the default load balancer you choose.
+### Good to know 
+- LBs can scale but not instantaneously, contact AWS for a warm-up.
+- NLB directly see the client IP
+- 4xx errors are client induced errors
+- 5xx errors are app induced errors.
