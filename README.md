@@ -220,7 +220,7 @@ but one subnet can be associated with one NACL at one time.
     - perform real time analytics on streams using SQL 
 ## Container Orchestration tools
 - it is a tool for managing, scaling and deploying containers. e.g kubernetes, docker swarm, ECS, etc
-### ECS 
+### ECS (Elastic Container Service)
 - It is a container orchestration service
 - It manages the whole container lifeCycle (start, re-schedule, load balance)
 #### How does ECS work ?
@@ -248,7 +248,7 @@ but one subnet can be associated with one NACL at one time.
 - Task: single running copy of any containers defined by a task definition. one working copy of an app e.gh DB & web applications.
 - Service: allows task definitions to be scaled by adding tasks. It defines minimum & maximum values.
 - Registry: storage for container images (e.g ECR or docker hub). used to donload images to create containers.
-### EkS
+### EkS (Elastic kubernetes Service)
 - It is an elastic kubernetes service. for managing kubernetes cluster on AWS infrastructure.
 - It is an alternative to ECS.
 #### ECS vs EKS 
