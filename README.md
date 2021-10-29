@@ -311,3 +311,5 @@ but one subnet can be associated with one NACL at one time.
 - NLB directly see the client IP
 - 4xx errors are client induced errors
 - 5xx errors are app induced errors.
+## CloudFormation
+- Is a declarative way of outlining the AWS infrastructure, for any resources (most of them are supported)
