@@ -196,7 +196,7 @@ but one subnet can be associated with one NACL at one time.
 - You can enable API caching in Amazon API Gateway to cache your endpoint's responses. With caching, you can reduce the number of calls made to your endpoint and also improve the latency of requests to your API.
 - 
 ## Kinesis 
-- It is a managed alternative to Apache Kafka 
+- It is a managed alternative to Apache Kafka (is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications)
 - great for application logs, metrics, IoT, clickstreams
 - Great for real-time big data
 - Great for streaming processing frameworks.
