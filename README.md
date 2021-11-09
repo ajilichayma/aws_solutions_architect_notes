@@ -12,10 +12,10 @@
     - VersionID (for versioning) 
     - MetaData (data about the data we are storing)
     - Subresources (access control list, torrent)
-### Data consistency for s3:
+### Data consistency for s3
     - Read after write consistency (after uploading a file we can immediately read it)
     - Eventual consistency for overwrite for puts and deletes
-### s3 features:
+### s3 features
     - Tiered storage 
     - lifeCycle management:Lifecycle policies allow you to automatically review objects within your S3 Buckets and have them moved to Glacier or have the objects deleted from S3. You may want to do this for security, legislative compliance, internal policy compliance, or general housekeeping.
     - Encryption 
@@ -24,18 +24,18 @@
 - AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password.
 - When deleting an object from a bucket where we applied versioning, it won’t be deleted automatically however a deletion mark will be putted on that object  
 ### S3 classes
-1. S3 Standard 
- It is really highly available and highly durable, stored across many devices in many facilities. 
-2. S3 IA (Infrequently accessed) 
-This is basically for data that has access less frequently but requires rapid access when you need it.
+1   S3 Standard 
+- It is really highly available and highly durable, stored across many devices in many facilities. 
+2   S3 IA (Infrequently accessed) 
+- This is basically for data that has access less frequently but requires rapid access when you need it.
 3. S3 One zone accessed
-this is when you want a really low cost option for your infrequently accessed data and you don't even need it. You don't have to worry about multiple Availability Zones so it is literally just stored in one availability zone and it's infrequently access but you still need to be able to access that data instantly 
+- this is when you want a really low cost option for your infrequently accessed data and you don't even need it. You don't have to worry about multiple Availability Zones so it is literally just stored in one availability zone and it's infrequently access but you still need to be able to access that data instantly 
 4. S3 intelligent tiering 
-this is using machine learning and basically what it does is it looks at how often you use your objects and then it will move your objects around the different storage classes based on what it's learnt so we'll move it from S3 standard to S3 infrequently accessed because it knows that you don't access those files so that's S3 intelligent tearing.
+- this is using machine learning and basically what it does is it looks at how often you use your objects and then it will move your objects around the different storage classes based on what it's learnt so we'll move it from S3 standard to S3 infrequently accessed because it knows that you don't access those files so that's S3 intelligent tearing.
 5. S3 Glacier 
-you can restore any amount of data and it's really super super cheap and then you can retrieve times configurable from minutes to hours.
+- you can restore any amount of data and it's really super super cheap and then you can retrieve times configurable from minutes to hours.
 6. S3 Glacier deep archive 
-This is the lowest storage class the lowest cost storage class that you can buy. But your retrieval time is going to be 12 hours.
+- This is the lowest storage class the lowest cost storage class that you can buy. But your retrieval time is going to be 12 hours.
 
 
 ## Databases
