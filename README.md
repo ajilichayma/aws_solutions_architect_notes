@@ -24,11 +24,11 @@
 - AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password.
 - When deleting an object from a bucket where we applied versioning, it won’t be deleted automatically however a deletion mark will be putted on that object  
 ### S3 classes
-1   S3 Standard 
+1.  S3 Standard 
 - It is really highly available and highly durable, stored across many devices in many facilities. 
-2   S3 IA (Infrequently accessed) 
+2.  S3 IA (Infrequently accessed) 
 - This is basically for data that has access less frequently but requires rapid access when you need it.
-3. S3 One zone accessed
+3.  S3 One zone accessed
 - this is when you want a really low cost option for your infrequently accessed data and you don't even need it. You don't have to worry about multiple Availability Zones so it is literally just stored in one availability zone and it's infrequently access but you still need to be able to access that data instantly 
 4. S3 intelligent tiering 
 - this is using machine learning and basically what it does is it looks at how often you use your objects and then it will move your objects around the different storage classes based on what it's learnt so we'll move it from S3 standard to S3 infrequently accessed because it knows that you don't access those files so that's S3 intelligent tearing.
