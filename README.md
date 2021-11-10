@@ -352,3 +352,5 @@ but one subnet can be associated with one NACL at one time.
 - 5xx errors are app induced errors.
 ## CloudFormation
 - Is a declarative way of outlining the AWS infrastructure, for any resources (most of them are supported)
+## AWS Global Accelerator
+ - Is a networking service that improves the performance of your users’ traffic by up to 60% using Amazon Web Services’ global network infrastructure. When the internet is congested, AWS Global Accelerator optimizes the path to your application to keep packet loss, jitter, and latency consistently low
