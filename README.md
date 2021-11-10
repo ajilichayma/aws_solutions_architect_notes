@@ -147,7 +147,8 @@
 ## VPC (virtual private cloud)
 - We can have 5 VPCs per region
 ### Bastion host
-is a server whose purpose is to provide access to a private network from an external network such as Internet
+- Is a server whose purpose is to provide access to a private network from an external network such as Internet.
+- Should be in a public subnet.
 
 ### Nat gateway 
 - When we have NAT gateway attached to the subnet where web server ec2 resides, the traffic from the internet cannot reach the ec2.
