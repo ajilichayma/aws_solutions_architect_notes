@@ -103,7 +103,8 @@
 - Data in the instance store persists only when we reboot the EC2 instance, they will be lost if:
     - The instance is stoped or terminated
     - The hard disk driver fails
-    
+## FSx:
+   
 ## Route 53: is the DNS service for Amazon
 - DNS is on the port 53 that's why we got the name of route 53
 - DNS is used to convert human friendly names into an internet protocol (IP) addresses 
