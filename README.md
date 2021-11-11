@@ -51,7 +51,25 @@
 - Automated backups: allow you to recover your database to any point in time within a retention period and the retention period can be between one and 35 days.
 - Database snapshots:
     - Are done manually.
-    -  
+
+## EC2: Elastic Compute Service
+### Placement groups 
+- It is the way we are going to put our EC2 instances 
+- The name of the placement group should be unique within AWS account
+
+#### Clustered placemeent group 
+- It' a group of instances within a single availability zone => the instances are very close to each other  
+	=> is recommended for applications that need low network latency, high network throughput or both
+
+#### Spread placemeent group 
+- It's a group of instances that each placed on distinct underlying hardware, it will be on a separate rack with separate network inputs as well as separate power requirements. it is recommended for apps that have a limit nb of critical instances that should be kept separate from each other
+- Our spread placement group is where we've got individual critical EC2 instances and we need them to be on separate pieces of hardware.
+- So if one piece of hardware fails, we can replace it easily without affecting the other instances
+#### Partitioned placemeent group 
+- it is similar to the spread placement group except we can have multiple instances within a partition
+- a clustered partition can’t span multiple AZ but spread and partitioned placement groups can 
+
+
 ## EBS:
 - Instance storage attached, the data will be lost if the instance is terminated.
 - We can dettach an EBS from one instance and attach it to another.
