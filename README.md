@@ -52,7 +52,7 @@
 - Database snapshots:
     - Are done manually.
 
-## EC2: Elastic Compute Service
+## EC2: Elastic Compute Cloud
 ### Placement groups 
 - It is the way we are going to put our EC2 instances 
 - The name of the placement group should be unique within AWS account
