@@ -52,7 +52,7 @@
 - Database snapshots:
     - Are done manually.
 
-## EC2: Elastic Compute Cloud
+## EC2 (Elastic Compute Cloud)
 ### Placement groups 
 - It is the way we are going to put our EC2 instances 
 - The name of the placement group should be unique within AWS account
@@ -70,7 +70,7 @@
 - a clustered partition can’t span multiple AZ but spread and partitioned placement groups can 
 
 
-## EBS:
+## EBS
 - Instance storage attached, the data will be lost if the instance is terminated.
 - We can dettach an EBS from one instance and attach it to another.
 - We can backup data on the EBS volumes to S3 by taking point-in-time snapshots.
@@ -103,7 +103,7 @@
 - Data in the instance store persists only when we reboot the EC2 instance, they will be lost if:
     - The instance is stoped or terminated
     - The hard disk driver fails
-## FSx:
+## FSx
    
 ## Route 53: is the DNS service for Amazon
 - DNS is on the port 53 that's why we got the name of route 53
