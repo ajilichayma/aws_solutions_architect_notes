@@ -370,6 +370,26 @@ but one subnet can be associated with one NACL at one time.
 - NLB directly see the client IP
 - 4xx errors are client induced errors
 - 5xx errors are app induced errors.
+
+## Autoscaling group
+- The goal is to :
+	- Scale out (add EC2 instances) to match an increased load.
+	- Scale in (remove instances) to match a decreased load. 
+- We have to ensure that we have a max & a min nb of machines running 
+- Automatically register new instances to a load balancer.
+- ASGs have the folling attributes:
+	- A launch configuration (AMI, instance type, EC2 data user, etc)
+	- Min/max size / initial capacity
+	- Network + subnets information
+	- Load balancer information
+	- Scaling policies
+		- It is possible based on the cloudWatch alarms.
+		- Can be on CPU, netxork and even can be on custom metrics or based on schedule (if you know your visitors patterns)
+- ASGs use launch config and you can update an ASG by providing a new launch configuration.
+- IAM roles attached to an ASG will get assigned to EC2 instances (because ASG don't have IAM)
+- ASG are free, you pay for the underlying ressources being launched & for the ressources being scaled in and out)
+- Having instances under an ASG means if they get terminated for whatever reason, the ASG will restart them. It is extra safe.
+- ASG can terminate instances marked as unhealthy by LB ( and hence replace them).
 ## CloudFormation
 - Is a declarative way of outlining the AWS infrastructure, for any resources (most of them are supported)
 ## AWS Global Accelerator
