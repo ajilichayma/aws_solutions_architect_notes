@@ -390,6 +390,7 @@ but one subnet can be associated with one NACL at one time.
 - ASG are free, you pay for the underlying ressources being launched & for the ressources being scaled in and out)
 - Having instances under an ASG means if they get terminated for whatever reason, the ASG will restart them. It is extra safe.
 - ASG can terminate instances marked as unhealthy by LB ( and hence replace them).
+- ASG launches instances based on the launch configuration.
 ## CloudFormation
 - Is a declarative way of outlining the AWS infrastructure, for any resources (most of them are supported)
 ## AWS Global Accelerator
