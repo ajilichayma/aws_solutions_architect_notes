@@ -400,4 +400,8 @@ but one subnet can be associated with one NACL at one time.
 ### DataSync 
 - Is a service mainly used to migrate NFS servers to S3, EFS, Fsx, etc.
 ### AWS Server Migration 
-- Is used t migrate on-premises worklods to AWS EC2. It does not support migrations to databases
+- Is used t migrate on-premises worklods to AWS EC2. It does not support migrations to databases in AWS
+### AWS Database Migration service
+- Hepls you to migrate yout on-premises database to AWS, keeping the on-premise database fully operational during the migration.
+### AWS migration Hub 
+- Is used to track the progress of migrations in AWS.
