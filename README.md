@@ -395,3 +395,9 @@ but one subnet can be associated with one NACL at one time.
 - Is a declarative way of outlining the AWS infrastructure, for any resources (most of them are supported)
 ## AWS Global Accelerator
  - Is a networking service that improves the performance of your users’ traffic by up to 60% using Amazon Web Services’ global network infrastructure. When the internet is congested, AWS Global Accelerator optimizes the path to your application to keep packet loss, jitter, and latency consistently low
+
+## Good to know
+### DataSync 
+- Is a service mainly used to migrate NFS servers to S3, EFS, Fsx, etc.
+### AWS Server Migration 
+- Is used t migrate on-premises worklods to AWS EC2. It does not support migrations to databases
