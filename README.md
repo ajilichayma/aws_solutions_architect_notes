@@ -405,13 +405,13 @@ but one subnet can be associated with one NACL at one time.
 - Hepls you to migrate yout on-premises database to AWS, keeping the on-premise database fully operational during the migration.
 ### AWS migration Hub 
 - Is used to track the progress of migrations in AWS.
-## AWS Snowball 
+### AWS Snowball 
 - Is a petabyte-scale data transport service that uses secure devices to transfer large amounts of data into and out of the AWS Cloud
-## Choosing signed urls vs signed cookies
+### Choosing signed urls vs signed cookies
 Cloudfront signed urls & cookies provide mainly the same basic functionality: they allow you to control who can access your content.
-### Use Cloudfront signed urls in the following use cases 
+#### Use Cloudfront signed urls in the following use cases 
 - You want to restrict access to individual files, e.g an installation file for your app.
 - Your users are using a client ( e.g a custom http client) that does not support cookies.
-### Use Cloudfront signed cookies in the following use cases 
+#### Use Cloudfront signed cookies in the following use cases 
 - You want to provide access to multiple restricted files, ex; all the files of a video 
 - You don't wanna to change the URL
