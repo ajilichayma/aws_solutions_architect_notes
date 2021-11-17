@@ -61,14 +61,17 @@
 - It' a group of instances within a single availability zone => the instances are very close to each other  
 	=> is recommended for applications that need low network latency, high network throughput or both
 
-#### Spread placemeent group 
+#### Spread placement group 
 - It's a group of instances that each placed on distinct underlying hardware, it will be on a separate rack with separate network inputs as well as separate power requirements. it is recommended for apps that have a limit nb of critical instances that should be kept separate from each other
 - Our spread placement group is where we've got individual critical EC2 instances and we need them to be on separate pieces of hardware.
 - So if one piece of hardware fails, we can replace it easily without affecting the other instances
+- 
 #### Partitioned placemeent group 
 - it is similar to the spread placement group except we can have multiple instances within a partition
 - a clustered partition can’t span multiple AZ but spread and partitioned placement groups can 
-
+### Hibernation 
+- When you hibernate an instance, Amazon EC2 signals the operating system to perform hibernation (suspend-to-disk). Hibernation saves the contents from the instance memory (RAM) to your Amazon Elastic Block Store (Amazon EBS) root volume. Amazon EC2 persists the instance's EBS root volume and any attached EBS data volumes
+- You can not hibernate an instance in an auto scaling group or used by Amazon ECS.
 
 ## EBS
 - Instance storage attached, the data will be lost if the instance is terminated.
@@ -165,6 +168,8 @@
 
 ## VPC (virtual private cloud)
 - We can have 5 VPCs per region
+### VPC endpoints
+- A VPC endpoint enables you to privately connect your VPC to supported AWS services and VPC nedpoint powered by privateLink without requiring an internet gateway, NAT device, VPN connection or AWS Direct Connect Connection. Instances in the VPC do not require public IP adrs to communicate with ressources in the service.traffic between VPC & other services does not leave the amazon network.
 ### Bastion host
 - Is a server whose purpose is to provide access to a private network from an external network such as Internet.
 - Should be in a public subnet.
@@ -233,8 +238,8 @@ but one subnet can be associated with one NACL at one time.
 - SQS long polling can reduce costs.
 - SQS long polling can be enabled at the queue level or at the API level using WaitTimeSeconds. 
 ### SQS remarks
-- For any question about decoupling the infrastructure, think about SQS
-
+- For any question about decoupling the infrastructure, think about SQS.
+- SQS helps horizontal scaling for aws ressources and is used for decoupling systems.
 ## SNS (Simple Notification Service)
 - It is a web service that makes it easy to set up, operate, and send notifications from the cloud.
 - It is a publish/subscriber syst
