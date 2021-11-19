@@ -400,6 +400,9 @@ but one subnet can be associated with one NACL at one time.
 - Is a declarative way of outlining the AWS infrastructure, for any resources (most of them are supported)
 ## AWS Global Accelerator
  - Is a networking service that improves the performance of your users’ traffic by up to 60% using Amazon Web Services’ global network infrastructure. When the internet is congested, AWS Global Accelerator optimizes the path to your application to keep packet loss, jitter, and latency consistently low
+## AWS Athena 
+- Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
+-It is easy to use. Simply point to your data in Amazon S3, define the schema, and start querying using standard SQL. Most results are delivered within seconds. With Athena, there’s no need for complex ETL jobs to prepare your data for analysis. This makes it easy for anyone with SQL skills to quickly analyze large-scale datasets.
 
 ## Good to know
 ### DataSync 
