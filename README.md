@@ -15,7 +15,7 @@
 ### Data consistency for s3
     - Read after write consistency (after uploading a file we can immediately read it)
     - Eventual consistency for overwrite for puts and deletes
-### s3 features
+### S3 features
     - Tiered storage 
     - lifeCycle management:Lifecycle policies allow you to automatically review objects within your S3 Buckets and have them moved to Glacier or have the objects deleted from S3. You may want to do this for security, legislative compliance, internal policy compliance, or general housekeeping.
     - Encryption 
@@ -36,7 +36,27 @@
 - you can restore any amount of data and it's really super super cheap and then you can retrieve times configurable from minutes to hours.
 #### 6. S3 Glacier deep archive 
 - This is the lowest storage class the lowest cost storage class that you can buy. But your retrieval time is going to be 12 hours.
+### Encryption
+- Encryption in transit
+	- protect data travel to & from S3 using SSL/TLS.e.g prevent man in the middle attacks.
+	- allow secure connnection, using aws: SecureTransport condition in the bucket policy.
+- Encryption at rest
+	- enable the enryption on the whole bucket or on individual objects
+	- using S3 server side encryption options ( it means that AWS encrypt & decrypt objects) 
+	- using client side encyption 
+#### server side encryption
+##### S3 managed keys (SSE-S3) 
+- it is the simplest option
+- each object is encrypted with a unique key
+- encypt the key itself with a master key & regularly rotate
+- aws manages the master keys 
+##### AWS key managed service (SSE-KMS) 
+- it has some advanced options 
+##### Customer provided keys (SSE-C) 
+- the customer provides the key encryption & AWS manages the encryption 
 
+### Good to know 
+- LifeCycle policies are used to transfer to Glaicer or to S3- Infrequent Access
 
 ## Databases
 - RDS: relational databases services is for online transaction processing (SQL, MySQL, PostgreSQL, Aurora, MariaDB, Oracle)
@@ -100,7 +120,8 @@
 - ### changing the data's encrytion state: (encrypt unencrypted volume)
   - We can't remove encryption from an encrypted volume 
   - We can't directly encrypt an uncrypted volume, instead we can create an instance with an encrypted root device volume from an encrpted snapshot
-  
+  ### Data LifeCycle
+  - it can be used for creation, retention & deletion of EBS snapshots. It protects critical data by initiating buclup of amazon EBS volumes at selected intervals, along with storing and deletion of old snapshots to save storage space & cost.
 ## Instance store
 - We can specify an instance store for an EC2 instance only when launching it
 - Data in the instance store persists only when we reboot the EC2 instance, they will be lost if:
@@ -203,6 +224,7 @@ but one subnet can be associated with one NACL at one time.
 
 ### Direct connect gateway
 - It is a gloabally available ressource to enable connections between amazon VPCs across different regions or AWS.
+- It does not encrypt the data in transit, to do it you should enable the transit encryption options for this service.
 ### VPC endpoints
 - It enables connections between VPC and supported services without requiring that you use an internet an internet gateway, NAT device, VPN connection or aws direct connect connection.
 ### VPN
@@ -404,6 +426,20 @@ but one subnet can be associated with one NACL at one time.
 - Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
 - It is easy to use. Simply point to your data in Amazon S3, define the schema, and start querying using standard SQL. Most results are delivered within seconds. With Athena, there’s no need for complex ETL jobs to prepare your data for analysis. This makes it easy for anyone with SQL skills to quickly analyze large-scale datasets.
 
+## AWS Organizations
+- hepls to centrally govern the env as it grows & to scale the workloads.
+- helps to manage billing, control access, compliance & security & share resources across your accounts.
+- helps to automate account creation, create groups of accounts to reflect the business needs & also to apply policies to these groups for goverance.
+- hepls to have one billing account, we have two methods of billing
+	- 1. consolidaded, it provides some cost benefits (having a discount when having used a certain amount of a service) 
+	- 2. all features method
+### Organization policies 
+##### Service control policies (SCP)
+- it defines the AWS service actions that are available for use.
+- when hanig a SCP that denies the launch of an EC2 instance applied to an organization, & eventhough we have an account having full administration access, it won't be able to launch.
+- the most restrictive policies will be applied.
+##### Tag policies (SCP)
+it enforces rules about tagging across accounts ( enforce best practises of using tags across the organization accounts)
 ## Good to know
 ### DataSync 
 - Is a service mainly used to migrate NFS servers to S3, EFS, Fsx, etc.
