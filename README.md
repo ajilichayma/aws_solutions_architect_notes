@@ -76,7 +76,7 @@
 ### Placement groups 
 - It is the way we are going to put our EC2 instances 
 - The name of the placement group should be unique within AWS account
-
+- you can migrate an instance from one placement to another.
 #### Clustered placemeent group 
 - It' a group of instances within a single availability zone => the instances are very close to each other  
 	=> is recommended for applications that need low network latency, high network throughput or both
