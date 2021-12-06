@@ -128,7 +128,12 @@
     - The instance is stoped or terminated
     - The hard disk driver fails
 ## FSx
-   
+  ### FSx for windows file server 
+  - is well suited to have a shared storage for your windows instances.but it does not read data from S3, and it isn't a high performance storage
+   ### FSx for lustre 
+   - is a high performance storage
+   - it can read data from S3 & connect to multiple instances at the same time.
+   - is mainly used to do high performance compute, read & write data into S3 & only works with linux instances
 ## Route 53: is the DNS service for Amazon
 - DNS is on the port 53 that's why we got the name of route 53
 - DNS is used to convert human friendly names into an internet protocol (IP) addresses 
